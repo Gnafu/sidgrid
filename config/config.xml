@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <plugin-config>
+  <depends plugin-name="com.iver.cit.gvsig" />
+  <depends plugin-name="es.unex.sextante" />
+	<resourceBundle name="text"/>
+	<libraries library-dir="lib"/>
+  <extensions>
+        <extension class-name="it.sidgrid.extensiones.HydrologicalModelExt"
+			description="Hydrological Model Extension"
+			active="true"
+			priority="1">
+		</extension>
+  		<extension class-name="it.sidgrid.extensiones.SidGridAboutExtension"
+		   description="Display About tab in GvSig"
+		   active="true">
+        </extension>
+        <extension class-name="it.sidgrid.dbase.DBcreate"
+                description="create"
+                active="true"
+                priority="1">
+           <menu text="SG_Data_Base/Create_DB" action-command="crea"/>
+        </extension>
+        <extension class-name="it.sidgrid.dbase.extensiones.DbLPFmanageExt"
+				description="modifica LPF"
+				active="true"
+				priority="1">
+           <menu text="SG_Data_Base/Modify_LPF" action-command="mlpf" />
+        </extension>
+        <extension class-name="it.sidgrid.dbase.extensiones.DbStressPeriodManageExt"
+                description="modifica Stress Period"
+                active="true"
+                priority="1">
+			<menu text="SG_Data_Base/Modify_Stress_Period" action-command="mstressp"/>
+			<menu text="SG_Data_Base/Modify_Well_Stress_Period" action-command="wellstress"/>
+			<menu text="SG_Configure/Time/Define_stress_period" action-command="stressdefine"/>
+			<menu text="SG_Data_Base/Modify_Recharge_Stress_Period" action-command="rchstress"/>
+        	<menu text="SG_Data_Base/Modify_Unsaturated_Zone_Stress_Period" action-command="unsaturatedstress"/>
+        	<menu is_separator="true" text="SG_Data_Base"/>
+        	<menu text="SG_Data_Base/Import_Model_layer" action-command="import"/>
+        	<menu is_separator="true" text="SG_Data_Base"/>
+        </extension>
+        
+        <extension class-name="it.sidgrid.extensiones.DomainGridExt"
+                description="domain"
+                active="true"
+                priority="1">
+			<menu text="SG_Configure/Domain/Create_Grid" action-command="grid"/>
+           	<menu text="SG_Configure/Domain/Model_layers" action-command="groundlayer"/>
+           	<menu text="SG_Configure/Domain/Refine/Create_refined_model_layer" action-command="refined_grid"/>
+        	<menu text="SG_Configure/Domain/surface_grid" action-command="surface_grid"></menu>
+        	<menu text="SG_Configure/Domain/Refine/LGR_table" action-command="managegridrefine"></menu>
+        </extension>
+        <extension class-name="it.sidgrid.extensiones.IncrociaVarExt"
+                description="edit"
+                active="true"
+                priority="1">
+			<menu text="SG_Configure/Tools/Import_parameters/From_Vector" action-command="vec"/>
+			<menu text="SG_Configure/Tools/Import_parameters/From_Raster" action-command="rast"/>
+			<menu text="SG_Configure/Tools/Import_parameters/From_Raster_-_Interpolator" action-command="rastinterpolator"></menu>
+			<menu text="SG_Configure/Tools/Import_parameters/Copy_from_Model_layer" action-command="gridtogrid"></menu>
+        </extension> 
+        <extension class-name="it.sidgrid.wrapper.extensiones.WrapperExt"
+                description="edit"
+                active="true"
+                priority="1">
+			<menu text="SG_Model_packages/Fundamental_packages" action-command="bas"/>
+            <menu text="SG_Model_packages/Well_package" action-command="well"/>
+        	<menu text="SG_Model_packages/Chd_package" action-command="chd"></menu>
+        	<menu text="SG_Model_packages/Rch_package" action-command="rch"></menu>
+        	<menu text="SG_Model_packages/Cfl_package" action-command="cfl"></menu>
+        	<menu text="SG_Model_packages/Uzf_package" action-command="uzf"></menu>
+        	<menu text="SG_Model_packages/Evt_package" action-command="evt"></menu>
+        	<menu text="SG_Model_packages/Riv_package" action-command="riv"></menu>
+        	<menu text="SG_Model_packages/Drain_package" action-command="drn"></menu>
+        	<menu text="SG_Model_packages/Ghb_package" action-command="ghb"></menu>
+        	<menu text="SG_Model_packages/Sfr2_package" action-command="sfr2"></menu>
+        	<menu text="SG_Model_packages/VSF_package/Ref" action-command="ref"></menu>
+        	<menu text="SG_Model_packages/VSF_package/Spf" action-command="spf"></menu>
+        	<menu text="SG_Model_packages/VSF_package/Pnd" action-command="pnd"></menu>
+        	<menu text="SG_Model_packages/VSF_package/Sev" action-command="sev"></menu>
+        	<menu text="SG_Model_packages/VSF_package/Rze" action-command="rze"></menu>
+        	<menu text="SG_Model_packages/Lgr_Control_File" action-command="lgr"></menu>
+        	<!--  <menu text="SG_TEST/Testa_WrapperExt" action-command="testgui"/> -->
+        </extension> 
+        <extension class-name="it.sidgrid.extensiones.GeomToolModelExt"
+                description="geom"
+                active="true"
+                priority="1">
+        	<menu is_separator="true" text="SG_Configure/Tools/Spatial_object_definition"/>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/Point_to_Well" action-command="pointwell" ></menu>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/Line_to_Time-Variant_Specified-Head" action-command="linechd"></menu>
+			<menu text="SG_Configure/Tools/Spatial_object_definition/Polygon_to_Recharge_Zone" action-command="polyrch"></menu>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/Create_Evapotranspiration_Zone" action-command="evapotra"></menu>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/River_line_interpolator" action-command="lineinterpol"></menu>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/Drain_line_interpolator" action-command="draininterpol"></menu>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/Ghb_line" action-command="ghbinterpol"></menu>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/Stream_flow_segment" action-command="strflow"></menu>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/Simulate_Unsaturated_Zone/Variable_Saturated_Flow/Soil_type" action-command="soiltable"/>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/Simulate_Unsaturated_Zone/Create_UZF_Model_layer" action-command="unsaturated"></menu>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/Simulate_Unsaturated_Zone/Variable_Saturated_Flow/Create_VSF_Model_Layer" action-command="vsflayer"></menu>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/Create_Weather_layer" action-command="weather"></menu>
+        	<menu is_separator="true" text="SG_Configure/Tools/Spatial_object_definition/Separator"/>
+        	<menu text="SG_Configure/Tools/Spatial_object_definition/Point_to_Model_cell" action-command="pointriver"></menu>
+        	<menu is_separator="true" text="SG_Configure/Tools/Spatial_object_definition"/>
+        	<!--  <menu text="SG_TEST/Testa_GeomToolModelExt" action-command="testgui"/> -->
+        </extension>
+        <extension class-name="it.sidgrid.wrapper.extensiones.OutputParserExt"
+                description="output"
+                active="true"
+                priority="1">
+           <menu text="SG_Configure/Tools/View_Model_Output" action-command="output"/>
+        </extension>
+        <extension class-name="it.sidgrid.extensiones.MPVectorAlgExt" 
+        		description="Multiprofilevectoranalisi" 
+        		active="true" 
+        		priority="1">
+      		<menu text="SG_Configure/Tools/2D_Cross_section" action-command="section"/>
+    	</extension>
+
+		<extension class-name="it.sidgrid.extensiones.Graph3Dext" description="graph" active="true" priority="1">
+	        <tool-bar name="sidgrid">
+			  <action-tool icon="images/map_go.png" tooltip="View_3D_model" position="1" action-command="vector" />
+			  <action-tool icon="images/map_go.png" tooltip="View_3D_model_raster" position="2" action-command="raster"/>
+			</tool-bar>
+		</extension>
+		<extension class-name="it.sidgrid.extensiones.ZoneBudgetExt" description="zonebud" priority="1" active="true">
+			<menu text="SG_Analysis/Create_Zone_Budget" action-command="zonebudget"/>
+			<menu text="SG_Analysis/Write_Zone_Budget_input_file" action-command="zone"/>
+			<menu text="SG_Analysis/Run_Zone_Budget" action-command="runzonebud"/>
+		</extension>
+		<extension class-name="it.sidgrid.extensiones.OgcPublishExt" description="publish" active="true" priority="1">
+			<menu text="SG_OGC/Publish_raster_output" action-command="publish" />
+			<menu text="SG_OGC/Publish_style" action-command="style" />
+		</extension>
+
+  </extensions>
+ </plugin-config>
+ 
